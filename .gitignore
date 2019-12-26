@@ -1,0 +1,14 @@
+# Dosieroj de programadmedio:
+.idea
+
+# Produktoj de pakado:
+vintra-fabelo.zip
+
+# Produktoj de kompilado:
+*.rpyb
+*.rpyc
+*.pyo
+!vintra-fabelo/lib/**/*.pyo
+
+# Protokoldosiero:
+vintra-fabelo/log.txt
