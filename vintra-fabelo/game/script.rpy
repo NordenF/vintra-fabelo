@@ -185,30 +185,30 @@
             return int(self.xpos), int(self.ypos), st, self.image
 
 
-# Здесь будет скрипт вашей визуальной новеллы. 
+# Здесь будет скрипт вашей визуальной новеллы.
 
 init python:
-    
+
     renpy.music.register_channel("sound", "sfx", False)
     renpy.music.register_channel("sound2", "sfx", False)
 
 init:
-    
+
     $ op_slogan = "hau-au-uvau.ogg"
     $ intro = "intro.ogg"
-    
-    $ hlp = Character(kind=nvl)
-    $ Q = Character(u'Q:', color="#fff2d0")
-    $ A = Character(u'A:', color="#fff2d0")
 
-    $ me = Character("Я", color="#fff2d0")
-    $ mz = Character("Женя", color="#000000")
-    $ sl = Character("Славя", color="#fcff00")
-    $ dv = Character("Алиса", color="#ff7e00")
-    $ us = Character("Ульяна", color="#ff0000")
-    $ un = Character("Лена", color="#782FAE")
-    $ mt = Character("Ольга Дмитриевна", color="#00d2ff")
-    
+    $ hlp = Character(kind=nvl)
+    $ Q = Character(u'D:', color="#fff2d0")
+    $ A = Character(u'R:', color="#fff2d0")
+
+    $ me = Character("Mi", color="#fff2d0")
+    $ mz = Character("Ĵenja", color="#000000")
+    $ sl = Character("Slavja", color="#fcff00")
+    $ dv = Character("Alisa", color="#ff7e00")
+    $ us = Character("Uljana", color="#ff0000")
+    $ un = Character("Lena", color="#782FAE")
+    $ mt = Character("Olga Dmítrijevna", color="#00d2ff")
+
     $ e_me = Character("Me", color="#fff2d0")
     $ e_mz = Character("Zhenya", color="#000000")
     $ e_sl = Character("Slavya", color="#fcff00")
@@ -221,7 +221,7 @@ init:
     $ config.window_icon = "images/icon.png"
 
 init:
-    
+
     # Здесь объявляют изображения, фоновые и персонажей. Командами вроде:
     image bg logo_eroge = "images/logo_eroge.jpg"
     image bg logo = "images/logo.png"
@@ -237,7 +237,7 @@ init:
     image bg menu2 = "images/menu.png"
     image bg faq = "images/faq.png"
     image bg long = "images/bg/long.png"
-    
+
     image cg final = "images/cg/final.png"
     image cg final_fin = "images/cg/final_fin.png"
     image cg sl_smile = "images/cg/sl_smile.png"
@@ -256,23 +256,23 @@ init:
     image mz shocked = "images/sprites/mz_shocked.png"
     image mz night = "images/sprites/mz_night.png"
     image mz night_eye = "images/sprites/mz_night_eye.png"
-    
+
     image sl normal = "images/sprites/sl_normal.png"
-    
+
     image us normal = "images/sprites/us_normal.png"
     image us dontlike = "images/sprites/us_dontlike.png"
     image us smile = "images/sprites/us_smile.png"
-    
+
     image dv normal = "images/sprites/dv_normal.png"
     image dv smile = "images/sprites/dv_smile.png"
     image dv smile_night = "images/sprites/dv_smile_night.png"
     image dv normal2 = "images/sprites/dv_normal2.png"
     image dv normal_night = "images/sprites/dv_normal_night.png"
-    
+
     image un normal = "images/sprites/un_normal.png"
     image un smush = "images/sprites/un_smush.png"
     image un smile = "images/sprites/un_smile.png"
-    
+
     image snow = Snow("images/snow.png")
 
 label intro:
@@ -288,17 +288,17 @@ label intro:
     scene black
     with dissolve
     $ renpy.pause(1)
-    
+
     scene black
     with dissolve
     $ renpy.pause(1)
 
 
-    play sound "winter_tale_logo.ogg" channel 1    
+    play sound "winter_tale_logo.ogg" channel 1
     $ renpy.pause(0.5)
 
     $ renpy.pause(0.5)
-    
+
     scene bg logo with dissolve
 
     $ renpy.pause(2.0)
@@ -307,59 +307,59 @@ label intro:
 
     scene black
     with dissolve
-    
+
     $ renpy.pause(2)
 
     return
-    
+
 label _splashscreen:
 
     call intro
-            
+
     $renpy.music.set_volume (0.6, channel=5)
     $renpy.music.set_volume (0.5, channel=4)
     play music "cold_wind01.ogg" fadein 7 channel 4
-    
+
     play music "tried_to_bring_it_back_(gameplay_theme_1).ogg" channel 5
-    
+
     scene bg long at Pan((0, 3239), (0, 0), 15.0)
     with dissolve
     $ renpy.pause(15)
     scene bg long at Pan((0, 0), (0, 450), 3.0)
     $ renpy.pause(6)
-    
+
     stop music fadeout 4 channel 4
-    
+
     scene bg pre_menu
     with fade
     with Pause(1)
-    
+
     scene bg menu2
     with dissolve
     with Pause(1)
-    
+
     return
-    
+
 label splashscreen:
-    
+
     scene bg gameversion
 
     python:
 
-        persistent.lang = "ru"  
+        persistent.lang = "ru"
         config_ru()
 
-        renpy.jump('_splashscreen') 
-        
+        renpy.jump('_splashscreen')
+
 label start:
-    
+
     if persistent.lang == "ru":
         jump ru_start
     if persistent.lang == "en":
         jump en_start
-        
+
 label rtfm:
-    
+
     if persistent.lang == "ru":
         jump ru_rtfm
     if persistent.lang == "en":

@@ -1,7 +1,6 @@
 # Vintra fabelo
 
-Estas traduko en Esperanton de la kurta vida novelo «Winter Tale»qq
-(el la universo de [«Senfina somero»](https://eo.wikipedia.org/wiki/Senfina_somero)).
+Estas traduko en Esperanton de la kurta vida novelo «Winter Tale» (el la universo de [«Senfina somero»](https://eo.wikipedia.org/wiki/Senfina_somero)).
 
 La originala novelo estas ruslingva.
 Ĝi estis kreita de la rusia amatora teamo IIchan Eroge Team decembre de la 2010-a jaro.
